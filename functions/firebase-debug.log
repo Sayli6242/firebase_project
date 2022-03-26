@@ -1,0 +1,421 @@
+[debug] [2022-03-26T12:57:02.540Z] ----------------------------------------------------------------------
+[debug] [2022-03-26T12:57:02.543Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Doremon\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2022-03-26T12:57:02.544Z] CLI Version:   10.4.2
+[debug] [2022-03-26T12:57:02.544Z] Platform:      win32
+[debug] [2022-03-26T12:57:02.545Z] Node Version:  v16.14.0
+[debug] [2022-03-26T12:57:02.547Z] Time:          Sat Mar 26 2022 18:27:02 GMT+0530 (India Standard Time)
+[debug] [2022-03-26T12:57:02.548Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-03-26T12:57:02.702Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-03-26T12:57:02.703Z] > authorizing via signed-in user (www.saylipatil1603@gmail.com)
+[debug] [2022-03-26T12:57:02.703Z] [iam] checking project onlinedoctor-beed3 for permissions ["firebase.projects.get"]
+[debug] [2022-03-26T12:57:02.709Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/onlinedoctor-beed3:testIamPermissions [none]
+[debug] [2022-03-26T12:57:02.710Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/onlinedoctor-beed3:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-03-26T12:57:05.357Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/onlinedoctor-beed3:testIamPermissions 200
+[debug] [2022-03-26T12:57:05.357Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/onlinedoctor-beed3:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-03-26T12:57:05.360Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/onlinedoctor-beed3 [none]
+[debug] [2022-03-26T12:57:06.989Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/onlinedoctor-beed3 200
+[debug] [2022-03-26T12:57:06.990Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/onlinedoctor-beed3 {"projectId":"onlinedoctor-beed3","projectNumber":"319467208568","displayName":"onlineDoctor","name":"projects/onlinedoctor-beed3","resources":{"hostingSite":"onlinedoctor-beed3"},"state":"ACTIVE"}
+[info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-03-26T12:57:07.023Z] defaultcredentials: writing to file C:\Users\Doremon\AppData\Roaming\firebase\www_saylipatil1603_gmail.com_application_default_credentials.json
+[debug] [2022-03-26T12:57:07.027Z] Setting GAC to C:\Users\Doremon\AppData\Roaming\firebase\www_saylipatil1603_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Doremon\\AppData\\Roaming\\firebase\\www_saylipatil1603_gmail.com_application_default_credentials.json"}}
+[debug] [2022-03-26T12:57:07.030Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/onlinedoctor-beed3/adminSdkConfig [none]
+[debug] [2022-03-26T12:57:08.035Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/onlinedoctor-beed3/adminSdkConfig 200
+[debug] [2022-03-26T12:57:08.036Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/onlinedoctor-beed3/adminSdkConfig {"projectId":"onlinedoctor-beed3","storageBucket":"onlinedoctor-beed3.appspot.com"}
+[info] i  functions: Watching "C:\Users\Doremon\Desktop\vue\fb-proj\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\" for Cloud Functions..."}}
+[debug] [2022-03-26T12:57:08.093Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-03-26T12:57:17.629Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
+[debug] [2022-03-26T12:57:17.630Z] Building nodejs source
+[debug] [2022-03-26T12:57:17.630Z] Analyzing nodejs backend spec
+[info] +  functions[us-central1-app]: http function initialized (http://localhost:5000/onlinedoctor-beed3/us-central1/app). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5000/onlinedoctor-beed3/us-central1/app)."}}
+[debug] [2022-03-26T12:57:32.820Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-26T12:57:32.821Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-26T12:57:32.821Z] Accepted request GET /onlinedoctor-beed3/us-central1/app --> us-central1-app
+[debug] [2022-03-26T12:57:32.849Z] [worker-pool] addWorker(us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-app)"}}
+[debug] [2022-03-26T12:57:32.850Z] [worker-pool] Adding worker with key us-central1-app, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-app, total=1"}}
+[debug] [2022-03-26T12:57:32.850Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-03-26T12:57:32.850Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: Assigning socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\20452 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\20452"}}
+[debug] [2022-03-26T12:57:32.851Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: BUSY"}}
+[debug] [2022-03-26T12:57:37.212Z] [runtime-status] [20452] Functions runtime initialized. {"cwd":"C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions","node_version":"16.14.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Functions runtime initialized. {\"cwd\":\"C:\\\\Users\\\\Doremon\\\\Desktop\\\\vue\\\\fb-proj\\\\functions\",\"node_version\":\"16.14.0\"}"}}
+[debug] [2022-03-26T12:57:37.214Z] [runtime-status] [20452] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Disabled runtime features: undefined"}}
+[debug] [2022-03-26T12:57:37.222Z] [runtime-status] [20452] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"8.9.1\",\"resolution\":\"C:\\\\Users\\\\Doremon\\\\Desktop\\\\vue\\\\fb-proj\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-26T12:57:37.229Z] [runtime-status] [20452] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.3.0\",\"resolution\":\"C:\\\\Users\\\\Doremon\\\\Desktop\\\\vue\\\\fb-proj\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[warn] !  The Cloud Functions emulator requires the module "firebase-functions" to be version >3.13.1 so your version is too old. You can probably fix this by running "npm install firebase-functions@latest" in your functions directory. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"The Cloud Functions emulator requires the module \"firebase-functions\" to be version >3.13.1 so your version is too old. You can probably fix this by running \"npm install firebase-functions@latest\" in your functions directory."}}
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above) {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Your functions could not be parsed due to an issue with your node_modules (see above)"}}
+[debug] [2022-03-26T12:57:37.697Z] [runtime-status] [20452] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-03-26T12:57:37.701Z] [runtime-status] [20452] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Running app in signature http"}}
+[debug] [2022-03-26T12:57:37.708Z] [runtime-status] [20452] Attempting to listen to socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\20452 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\20452"}}
+[debug] [2022-03-26T12:57:37.721Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-26T12:57:37.723Z] [functions] Got req.url=/onlinedoctor-beed3/us-central1/app, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/onlinedoctor-beed3/us-central1/app, mapping to path=/"}}
+[debug] [2022-03-26T12:57:37.767Z] [runtime-status] [20452] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Ephemeral server handling GET request"}}
+[debug] [2022-03-26T12:57:37.782Z] [runtime-status] [20452] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~1s"}}
+[debug] [2022-03-26T12:57:37.790Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: IDLE"}}
+[debug] [2022-03-26T12:57:37.791Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-26T12:57:40.358Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-26T12:57:40.358Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-26T12:57:40.358Z] Accepted request GET /onlinedoctor-beed3/us-central1/app --> us-central1-app
+[debug] [2022-03-26T12:57:40.359Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-03-26T12:57:40.359Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: Assigning socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\20452 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\20452"}}
+[debug] [2022-03-26T12:57:40.359Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: BUSY"}}
+[debug] [2022-03-26T12:57:40.361Z] [runtime-status] [20452] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-03-26T12:57:40.364Z] [runtime-status] [20452] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Running app in signature http"}}
+[debug] [2022-03-26T12:57:40.366Z] [runtime-status] [20452] Attempting to listen to socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\20452 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\20452"}}
+[debug] [2022-03-26T12:57:40.375Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-26T12:57:40.376Z] [functions] Got req.url=/onlinedoctor-beed3/us-central1/app, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/onlinedoctor-beed3/us-central1/app, mapping to path=/"}}
+[debug] [2022-03-26T12:57:40.384Z] [runtime-status] [20452] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Ephemeral server handling GET request"}}
+[debug] [2022-03-26T12:57:40.390Z] [runtime-status] [20452] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~1s"}}
+[debug] [2022-03-26T12:57:40.394Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: IDLE"}}
+[debug] [2022-03-26T12:57:40.395Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-26T12:57:41.724Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-26T12:57:41.725Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-26T12:57:41.725Z] Accepted request GET /onlinedoctor-beed3/us-central1/app --> us-central1-app
+[debug] [2022-03-26T12:57:41.726Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-03-26T12:57:41.726Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: Assigning socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\20452 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\20452"}}
+[debug] [2022-03-26T12:57:41.726Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: BUSY"}}
+[debug] [2022-03-26T12:57:41.728Z] [runtime-status] [20452] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-03-26T12:57:41.731Z] [runtime-status] [20452] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Running app in signature http"}}
+[debug] [2022-03-26T12:57:41.732Z] [runtime-status] [20452] Attempting to listen to socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\20452 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\20452"}}
+[debug] [2022-03-26T12:57:41.740Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-26T12:57:41.741Z] [functions] Got req.url=/onlinedoctor-beed3/us-central1/app, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/onlinedoctor-beed3/us-central1/app, mapping to path=/"}}
+[debug] [2022-03-26T12:57:41.749Z] [runtime-status] [20452] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Ephemeral server handling GET request"}}
+[debug] [2022-03-26T12:57:41.755Z] [runtime-status] [20452] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~1s"}}
+[debug] [2022-03-26T12:57:41.758Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: IDLE"}}
+[debug] [2022-03-26T12:57:41.759Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-26T12:57:56.193Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-26T12:57:56.193Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-26T12:57:56.194Z] Accepted request GET /onlinedoctor-beed3/us-central1/app/doctors --> us-central1-app
+[debug] [2022-03-26T12:57:56.194Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-03-26T12:57:56.194Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: Assigning socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\20452 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\20452"}}
+[debug] [2022-03-26T12:57:56.195Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: BUSY"}}
+[debug] [2022-03-26T12:57:56.197Z] [runtime-status] [20452] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-03-26T12:57:56.204Z] [runtime-status] [20452] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Running app in signature http"}}
+[debug] [2022-03-26T12:57:56.207Z] [runtime-status] [20452] Attempting to listen to socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\20452 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\20452"}}
+[debug] [2022-03-26T12:57:56.213Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-26T12:57:56.213Z] [functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors, mapping to path=/doctors {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors, mapping to path=/doctors"}}
+[debug] [2022-03-26T12:57:56.221Z] [runtime-status] [20452] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Ephemeral server handling GET request"}}
+[debug] [2022-03-26T12:57:56.225Z] [runtime-status] [20452] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~1s"}}
+[debug] [2022-03-26T12:57:56.228Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: IDLE"}}
+[debug] [2022-03-26T12:57:56.229Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-26T12:58:12.848Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-26T12:58:12.848Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-26T12:58:12.848Z] Accepted request GET /onlinedoctor-beed3/us-central1/app/doctors --> us-central1-app
+[debug] [2022-03-26T12:58:12.849Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-03-26T12:58:12.850Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: Assigning socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\20452 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\20452"}}
+[debug] [2022-03-26T12:58:12.850Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: BUSY"}}
+[debug] [2022-03-26T12:58:12.854Z] [runtime-status] [20452] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-03-26T12:58:12.857Z] [runtime-status] [20452] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Running app in signature http"}}
+[debug] [2022-03-26T12:58:12.858Z] [runtime-status] [20452] Attempting to listen to socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\20452 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\20452"}}
+[debug] [2022-03-26T12:58:12.863Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-26T12:58:12.865Z] [functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors, mapping to path=/doctors {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors, mapping to path=/doctors"}}
+[debug] [2022-03-26T12:58:12.876Z] [runtime-status] [20452] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Ephemeral server handling GET request"}}
+[debug] [2022-03-26T12:58:12.880Z] [runtime-status] [20452] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [20452] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~1s"}}
+[debug] [2022-03-26T12:58:12.886Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: IDLE"}}
+[debug] [2022-03-26T12:58:12.887Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-26T12:58:39.317Z] File C:\Users\Doremon\Desktop\vue\fb-proj\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-03-26T12:58:40.319Z] [worker-pool] Shutting down IDLE worker (us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-app)"}}
+[debug] [2022-03-26T12:58:40.319Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: FINISHING"}}
+[debug] [2022-03-26T12:58:40.324Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-03-26T12:58:51.675Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
+[debug] [2022-03-26T12:58:51.676Z] Building nodejs source
+[debug] [2022-03-26T12:58:51.676Z] Analyzing nodejs backend spec
+[debug] [2022-03-26T12:58:51.694Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: exited"}}
+[debug] [2022-03-26T12:58:51.695Z] [worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-2ecc27fd-ba35-483c-a37d-c01f02d84741]: FINISHED"}}
+[debug] [2022-03-26T12:59:00.575Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-26T12:59:00.576Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-26T12:59:00.576Z] Accepted request GET /onlinedoctor-beed3/us-central1/app/doctors --> us-central1-app
+[debug] [2022-03-26T12:59:00.577Z] [worker-pool] Cleaned up workers for us-central1-app: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-app: 1 --> 0"}}
+[debug] [2022-03-26T12:59:00.600Z] [worker-pool] addWorker(us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-app)"}}
+[debug] [2022-03-26T12:59:00.601Z] [worker-pool] Adding worker with key us-central1-app, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-app, total=1"}}
+[debug] [2022-03-26T12:59:00.601Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-03-26T12:59:00.601Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: Assigning socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\21692 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\21692"}}
+[debug] [2022-03-26T12:59:00.602Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: BUSY"}}
+[debug] [2022-03-26T12:59:05.179Z] [runtime-status] [21692] Functions runtime initialized. {"cwd":"C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions","node_version":"16.14.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Functions runtime initialized. {\"cwd\":\"C:\\\\Users\\\\Doremon\\\\Desktop\\\\vue\\\\fb-proj\\\\functions\",\"node_version\":\"16.14.0\"}"}}
+[debug] [2022-03-26T12:59:05.181Z] [runtime-status] [21692] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Disabled runtime features: undefined"}}
+[debug] [2022-03-26T12:59:05.190Z] [runtime-status] [21692] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"8.9.1\",\"resolution\":\"C:\\\\Users\\\\Doremon\\\\Desktop\\\\vue\\\\fb-proj\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-26T12:59:05.194Z] [runtime-status] [21692] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.3.0\",\"resolution\":\"C:\\\\Users\\\\Doremon\\\\Desktop\\\\vue\\\\fb-proj\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[warn] !  The Cloud Functions emulator requires the module "firebase-functions" to be version >3.13.1 so your version is too old. You can probably fix this by running "npm install firebase-functions@latest" in your functions directory. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"The Cloud Functions emulator requires the module \"firebase-functions\" to be version >3.13.1 so your version is too old. You can probably fix this by running \"npm install firebase-functions@latest\" in your functions directory."}}
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above) {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Your functions could not be parsed due to an issue with your node_modules (see above)"}}
+[debug] [2022-03-26T12:59:05.706Z] [runtime-status] [21692] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-03-26T12:59:05.708Z] [runtime-status] [21692] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Running app in signature http"}}
+[debug] [2022-03-26T12:59:05.716Z] [runtime-status] [21692] Attempting to listen to socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\21692 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\21692"}}
+[debug] [2022-03-26T12:59:05.724Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-26T12:59:05.725Z] [functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors, mapping to path=/doctors {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors, mapping to path=/doctors"}}
+[debug] [2022-03-26T12:59:05.767Z] [runtime-status] [21692] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Ephemeral server handling GET request"}}
+[debug] [2022-03-26T12:59:05.779Z] [runtime-status] [21692] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~1s"}}
+[debug] [2022-03-26T12:59:05.801Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: IDLE"}}
+[debug] [2022-03-26T12:59:05.802Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-26T12:59:06.596Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-26T12:59:06.596Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-26T12:59:06.596Z] Accepted request GET /onlinedoctor-beed3/us-central1/app/doctors/ --> us-central1-app
+[debug] [2022-03-26T12:59:06.597Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-03-26T12:59:06.597Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: Assigning socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\21692 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\21692"}}
+[debug] [2022-03-26T12:59:06.598Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: BUSY"}}
+[debug] [2022-03-26T12:59:06.599Z] [runtime-status] [21692] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-03-26T12:59:06.601Z] [runtime-status] [21692] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Running app in signature http"}}
+[debug] [2022-03-26T12:59:06.602Z] [runtime-status] [21692] Attempting to listen to socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\21692 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\21692"}}
+[debug] [2022-03-26T12:59:06.608Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-26T12:59:06.614Z] [functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors/, mapping to path=/doctors/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors/, mapping to path=/doctors/"}}
+[debug] [2022-03-26T12:59:06.619Z] [runtime-status] [21692] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Ephemeral server handling GET request"}}
+[debug] [2022-03-26T12:59:06.625Z] [runtime-status] [21692] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~1s"}}
+[debug] [2022-03-26T12:59:06.631Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: IDLE"}}
+[debug] [2022-03-26T12:59:06.631Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-26T12:59:10.048Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-26T12:59:10.048Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-26T12:59:10.049Z] Accepted request GET /onlinedoctor-beed3/us-central1/app/doctors/ --> us-central1-app
+[debug] [2022-03-26T12:59:10.049Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-03-26T12:59:10.049Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: Assigning socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\21692 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\21692"}}
+[debug] [2022-03-26T12:59:10.050Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: BUSY"}}
+[debug] [2022-03-26T12:59:10.051Z] [runtime-status] [21692] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-03-26T12:59:10.053Z] [runtime-status] [21692] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Running app in signature http"}}
+[debug] [2022-03-26T12:59:10.054Z] [runtime-status] [21692] Attempting to listen to socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\21692 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\21692"}}
+[debug] [2022-03-26T12:59:10.063Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-26T12:59:10.064Z] [functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors/, mapping to path=/doctors/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors/, mapping to path=/doctors/"}}
+[debug] [2022-03-26T12:59:10.072Z] [runtime-status] [21692] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Ephemeral server handling GET request"}}
+[debug] [2022-03-26T12:59:10.077Z] [runtime-status] [21692] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~1s"}}
+[debug] [2022-03-26T12:59:10.082Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: IDLE"}}
+[debug] [2022-03-26T12:59:10.082Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-26T12:59:11.723Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-26T12:59:11.723Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-26T12:59:11.724Z] Accepted request GET /onlinedoctor-beed3/us-central1/app/doctors/ --> us-central1-app
+[debug] [2022-03-26T12:59:11.724Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-03-26T12:59:11.724Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: Assigning socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\21692 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\21692"}}
+[debug] [2022-03-26T12:59:11.725Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: BUSY"}}
+[debug] [2022-03-26T12:59:11.727Z] [runtime-status] [21692] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-03-26T12:59:11.731Z] [runtime-status] [21692] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Running app in signature http"}}
+[debug] [2022-03-26T12:59:11.732Z] [runtime-status] [21692] Attempting to listen to socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\21692 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\21692"}}
+[debug] [2022-03-26T12:59:11.739Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-26T12:59:11.740Z] [functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors/, mapping to path=/doctors/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors/, mapping to path=/doctors/"}}
+[debug] [2022-03-26T12:59:11.746Z] [runtime-status] [21692] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Ephemeral server handling GET request"}}
+[debug] [2022-03-26T12:59:11.749Z] [runtime-status] [21692] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~1s"}}
+[debug] [2022-03-26T12:59:11.753Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: IDLE"}}
+[debug] [2022-03-26T12:59:11.754Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-26T12:59:12.390Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-26T12:59:12.391Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-26T12:59:12.391Z] Accepted request GET /onlinedoctor-beed3/us-central1/app/doctors/ --> us-central1-app
+[debug] [2022-03-26T12:59:12.392Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-03-26T12:59:12.392Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: Assigning socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\21692 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\21692"}}
+[debug] [2022-03-26T12:59:12.393Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: BUSY"}}
+[debug] [2022-03-26T12:59:12.394Z] [runtime-status] [21692] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-03-26T12:59:12.396Z] [runtime-status] [21692] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Running app in signature http"}}
+[debug] [2022-03-26T12:59:12.397Z] [runtime-status] [21692] Attempting to listen to socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\21692 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\21692"}}
+[debug] [2022-03-26T12:59:12.404Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-26T12:59:12.405Z] [functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors/, mapping to path=/doctors/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors/, mapping to path=/doctors/"}}
+[debug] [2022-03-26T12:59:12.409Z] [runtime-status] [21692] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Ephemeral server handling GET request"}}
+[debug] [2022-03-26T12:59:12.413Z] [runtime-status] [21692] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~1s"}}
+[debug] [2022-03-26T12:59:12.417Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: IDLE"}}
+[debug] [2022-03-26T12:59:12.418Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-26T12:59:32.099Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-26T12:59:32.099Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-26T12:59:32.100Z] Accepted request GET /onlinedoctor-beed3/us-central1/app/doctors/ --> us-central1-app
+[debug] [2022-03-26T12:59:32.100Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-03-26T12:59:32.101Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: Assigning socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\21692 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\21692"}}
+[debug] [2022-03-26T12:59:32.107Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: BUSY"}}
+[debug] [2022-03-26T12:59:32.114Z] [runtime-status] [21692] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-03-26T12:59:32.124Z] [runtime-status] [21692] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Running app in signature http"}}
+[debug] [2022-03-26T12:59:32.125Z] [runtime-status] [21692] Attempting to listen to socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\21692 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\21692"}}
+[debug] [2022-03-26T12:59:32.129Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-26T12:59:32.129Z] [functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors/, mapping to path=/doctors/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors/, mapping to path=/doctors/"}}
+[debug] [2022-03-26T12:59:32.139Z] [runtime-status] [21692] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Ephemeral server handling GET request"}}
+[debug] [2022-03-26T12:59:32.144Z] [runtime-status] [21692] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [21692] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~1s"}}
+[debug] [2022-03-26T12:59:32.180Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: IDLE"}}
+[debug] [2022-03-26T12:59:32.180Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-26T13:00:23.380Z] File C:\Users\Doremon\Desktop\vue\fb-proj\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-03-26T13:00:24.386Z] [worker-pool] Shutting down IDLE worker (us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-app)"}}
+[debug] [2022-03-26T13:00:24.386Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: FINISHING"}}
+[debug] [2022-03-26T13:00:24.390Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-03-26T13:00:34.348Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
+[debug] [2022-03-26T13:00:34.349Z] Building nodejs source
+[debug] [2022-03-26T13:00:34.349Z] Analyzing nodejs backend spec
+[debug] [2022-03-26T13:00:34.367Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: exited"}}
+[debug] [2022-03-26T13:00:34.368Z] [worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-44e3708a-d911-4a83-941b-fed9978efc9b]: FINISHED"}}
+[debug] [2022-03-26T13:00:34.370Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-26T13:00:34.370Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-26T13:00:34.370Z] Accepted request GET /onlinedoctor-beed3/us-central1/app/doctors/ --> us-central1-app
+[debug] [2022-03-26T13:00:34.370Z] [worker-pool] Cleaned up workers for us-central1-app: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-app: 1 --> 0"}}
+[debug] [2022-03-26T13:00:34.394Z] [worker-pool] addWorker(us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-app)"}}
+[debug] [2022-03-26T13:00:34.394Z] [worker-pool] Adding worker with key us-central1-app, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-app, total=1"}}
+[debug] [2022-03-26T13:00:34.394Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-03-26T13:00:34.395Z] [worker-us-central1-app-cdf8ebd5-1f79-48b0-b535-a56fd855ce2b]: Assigning socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\15948 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-cdf8ebd5-1f79-48b0-b535-a56fd855ce2b]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\15948"}}
+[debug] [2022-03-26T13:00:34.395Z] [worker-us-central1-app-cdf8ebd5-1f79-48b0-b535-a56fd855ce2b]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-cdf8ebd5-1f79-48b0-b535-a56fd855ce2b]: BUSY"}}
+[debug] [2022-03-26T13:00:39.323Z] [runtime-status] [15948] Functions runtime initialized. {"cwd":"C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions","node_version":"16.14.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15948] Functions runtime initialized. {\"cwd\":\"C:\\\\Users\\\\Doremon\\\\Desktop\\\\vue\\\\fb-proj\\\\functions\",\"node_version\":\"16.14.0\"}"}}
+[debug] [2022-03-26T13:00:39.327Z] [runtime-status] [15948] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15948] Disabled runtime features: undefined"}}
+[debug] [2022-03-26T13:00:39.335Z] [runtime-status] [15948] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15948] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"8.9.1\",\"resolution\":\"C:\\\\Users\\\\Doremon\\\\Desktop\\\\vue\\\\fb-proj\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-26T13:00:39.341Z] [runtime-status] [15948] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15948] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.3.0\",\"resolution\":\"C:\\\\Users\\\\Doremon\\\\Desktop\\\\vue\\\\fb-proj\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[warn] !  The Cloud Functions emulator requires the module "firebase-functions" to be version >3.13.1 so your version is too old. You can probably fix this by running "npm install firebase-functions@latest" in your functions directory. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"The Cloud Functions emulator requires the module \"firebase-functions\" to be version >3.13.1 so your version is too old. You can probably fix this by running \"npm install firebase-functions@latest\" in your functions directory."}}
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above) {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Your functions could not be parsed due to an issue with your node_modules (see above)"}}
+[debug] [2022-03-26T13:00:39.889Z] [runtime-status] [15948] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15948] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-03-26T13:00:39.890Z] [runtime-status] [15948] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15948] Running app in signature http"}}
+[debug] [2022-03-26T13:00:39.902Z] [runtime-status] [15948] Attempting to listen to socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\15948 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15948] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\15948"}}
+[debug] [2022-03-26T13:00:39.906Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-26T13:00:39.907Z] [functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors/, mapping to path=/doctors/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors/, mapping to path=/doctors/"}}
+[debug] [2022-03-26T13:00:39.941Z] [runtime-status] [15948] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15948] Ephemeral server handling GET request"}}
+[debug] [2022-03-26T13:00:39.966Z] [runtime-status] [15948] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15948] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~1s"}}
+[debug] [2022-03-26T13:00:40.033Z] [worker-us-central1-app-cdf8ebd5-1f79-48b0-b535-a56fd855ce2b]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-cdf8ebd5-1f79-48b0-b535-a56fd855ce2b]: IDLE"}}
+[debug] [2022-03-26T13:00:40.034Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-03-26T13:00:58.325Z] File C:\Users\Doremon\Desktop\vue\fb-proj\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-03-26T13:00:59.327Z] [worker-pool] Shutting down IDLE worker (us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-app)"}}
+[debug] [2022-03-26T13:00:59.327Z] [worker-us-central1-app-cdf8ebd5-1f79-48b0-b535-a56fd855ce2b]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-cdf8ebd5-1f79-48b0-b535-a56fd855ce2b]: FINISHING"}}
+[debug] [2022-03-26T13:00:59.336Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-03-26T13:01:09.006Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
+[debug] [2022-03-26T13:01:09.007Z] Building nodejs source
+[debug] [2022-03-26T13:01:09.007Z] Analyzing nodejs backend spec
+[debug] [2022-03-26T13:01:09.025Z] [worker-us-central1-app-cdf8ebd5-1f79-48b0-b535-a56fd855ce2b]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-cdf8ebd5-1f79-48b0-b535-a56fd855ce2b]: exited"}}
+[debug] [2022-03-26T13:01:09.026Z] [worker-us-central1-app-cdf8ebd5-1f79-48b0-b535-a56fd855ce2b]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-cdf8ebd5-1f79-48b0-b535-a56fd855ce2b]: FINISHED"}}
+[debug] [2022-03-26T13:01:23.302Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-03-26T13:01:23.302Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-03-26T13:01:23.303Z] Accepted request GET /onlinedoctor-beed3/us-central1/app/doctors --> us-central1-app
+[debug] [2022-03-26T13:01:23.304Z] [worker-pool] Cleaned up workers for us-central1-app: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-app: 1 --> 0"}}
+[debug] [2022-03-26T13:01:23.338Z] [worker-pool] addWorker(us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-app)"}}
+[debug] [2022-03-26T13:01:23.339Z] [worker-pool] Adding worker with key us-central1-app, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-app, total=1"}}
+[debug] [2022-03-26T13:01:23.339Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-03-26T13:01:23.340Z] [worker-us-central1-app-56ab3358-e401-4f9f-8b15-cc8ac2b26390]: Assigning socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\15876 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-56ab3358-e401-4f9f-8b15-cc8ac2b26390]: Assigning socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\15876"}}
+[debug] [2022-03-26T13:01:23.340Z] [worker-us-central1-app-56ab3358-e401-4f9f-8b15-cc8ac2b26390]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-56ab3358-e401-4f9f-8b15-cc8ac2b26390]: BUSY"}}
+[debug] [2022-03-26T13:01:27.893Z] [runtime-status] [15876] Functions runtime initialized. {"cwd":"C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions","node_version":"16.14.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15876] Functions runtime initialized. {\"cwd\":\"C:\\\\Users\\\\Doremon\\\\Desktop\\\\vue\\\\fb-proj\\\\functions\",\"node_version\":\"16.14.0\"}"}}
+[debug] [2022-03-26T13:01:27.896Z] [runtime-status] [15876] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15876] Disabled runtime features: undefined"}}
+[debug] [2022-03-26T13:01:27.906Z] [runtime-status] [15876] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.1","resolution":"C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15876] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"8.9.1\",\"resolution\":\"C:\\\\Users\\\\Doremon\\\\Desktop\\\\vue\\\\fb-proj\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-03-26T13:01:27.912Z] [runtime-status] [15876] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15876] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.3.0\",\"resolution\":\"C:\\\\Users\\\\Doremon\\\\Desktop\\\\vue\\\\fb-proj\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[warn] !  The Cloud Functions emulator requires the module "firebase-functions" to be version >3.13.1 so your version is too old. You can probably fix this by running "npm install firebase-functions@latest" in your functions directory. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"The Cloud Functions emulator requires the module \"firebase-functions\" to be version >3.13.1 so your version is too old. You can probably fix this by running \"npm install firebase-functions@latest\" in your functions directory."}}
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above) {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Your functions could not be parsed due to an issue with your node_modules (see above)"}}
+[debug] [2022-03-26T13:01:28.555Z] [runtime-status] [15876] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15876] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-03-26T13:01:28.557Z] [runtime-status] [15876] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15876] Running app in signature http"}}
+[debug] [2022-03-26T13:01:28.566Z] [runtime-status] [15876] Attempting to listen to socketPath: \\?\pipe\C:\Users\Doremon\Desktop\vue\fb-proj\functions\15876 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15876] Attempting to listen to socketPath: \\\\?\\pipe\\C:\\Users\\Doremon\\Desktop\\vue\\fb-proj\\functions\\15876"}}
+[debug] [2022-03-26T13:01:28.574Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-03-26T13:01:28.575Z] [functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors, mapping to path=/doctors {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/onlinedoctor-beed3/us-central1/app/doctors, mapping to path=/doctors"}}
+[debug] [2022-03-26T13:01:28.626Z] [runtime-status] [15876] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15876] Ephemeral server handling GET request"}}
+[debug] [2022-03-26T13:01:28.640Z] [runtime-status] [15876] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [15876] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~1s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~1s"}}
+[debug] [2022-03-26T13:01:28.696Z] [worker-us-central1-app-56ab3358-e401-4f9f-8b15-cc8ac2b26390]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-56ab3358-e401-4f9f-8b15-cc8ac2b26390]: IDLE"}}
+[debug] [2022-03-26T13:01:28.702Z] [work-queue] {"queueLength":0,"workRunningCount":0}
