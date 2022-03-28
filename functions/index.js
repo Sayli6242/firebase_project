@@ -44,11 +44,17 @@ const db = admin.firestore();
 
 app.delete('/:id', async (req, res) => {
     // console.log(req.params);
-    const resp = await db.collection('cities').doc(req.params.id).delete();
+    const resp = await db.collection('doctors').doc(req.params.id).delete();
     console.log(resp);
     res.send('delete function')
 });
 app.put('/:id', (req, res) => res.send('put something'));
+app.put('/:id', async (req, res) => {
+    // console.log(req.params);
+    const resp = await db.collection('doctors').doc(req.params.id).put();
+    console.log(resp);
+    res.send('update something')
+});
 app.post('/', async (req, res) => {
     // add data to data base
     const docRef = db.collection('doctors').doc();
@@ -60,9 +66,6 @@ app.post('/', async (req, res) => {
 });
 // app.get('/', (req, res) => res.send(doctors));
 app.get('/:id', (req, res) => res.send('get method'));
-
-
-
 app.get('/', async (req, res) => {
     const doctors = []
     // doctors.push(doc)
@@ -82,5 +85,4 @@ app.get('/', async (req, res) => {
 // getDocuments()
 
 exports.app = functions.https.onRequest(app);
-
 
