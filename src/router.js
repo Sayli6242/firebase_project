@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../src/views/Home.vue'
+import Appointments from '../src/views/Appointments.vue'
 import Login from '../src/views/Login.vue'
 import Signup from '../src/views/Signup.vue'
+import List from '../src/views/List.vue'
 
 Vue.use(VueRouter)
 
@@ -26,6 +28,20 @@ const routes = [{ path: '/', redirect: { name: 'Home' } },
     beforeEnter: (to, from, next) => {
         guard(to, from, next);
     }
+},
+{
+    path: '/appointments',
+    name: 'Appointments',
+    component: Appointments,
+    beforeEnter: (to, from, next) => {
+        guard(to, from, next);
+    }
+},
+{
+    path: '/list',
+    name: 'List',
+    component: List
+
 },
 {
     path: "/login",

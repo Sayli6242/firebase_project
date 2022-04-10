@@ -5,8 +5,18 @@ import router from './router'
 import firebase from "firebase/compat/app";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/scss/bootstrap.scss'
-import { ButtonPlugin } from 'bootstrap-vue'
+import { ButtonPlugin, ModalPlugin } from 'bootstrap-vue'
+
+import BootstrapVue from "bootstrap-vue";
+Vue.use(BootstrapVue);
+import VueSidebarMenu from 'vue-sidebar-menu'
+import { CardPlugin } from "bootstrap-vue";
+
+
+Vue.use(VueSidebarMenu)
 Vue.use(ButtonPlugin)
+Vue.use(CardPlugin);
+Vue.use(ModalPlugin)
 
 const firebaseConfig = {
   apiKey: "AIzaSyBj_XYZQgKH-9YU6fdivTnNHQAySbDhkiw",

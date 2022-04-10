@@ -1,76 +1,66 @@
 <template>
   <div>
-    <table class="table table-bordered border-dark">
+    <table class="table table-bordered border-dark" v-if="doctors.length">
       <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">Name</th>
-          <th scope="col">Speciality</th>
+          <th scope="col">speciality</th>
           <th scope="col">Location</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(doc, index) in doctors" :key="doc.id">
           <th scope="row">{{ index + 1 }}</th>
-          <td>{{ doc.Name }}</td>
-          <td>{{ doc.Speciality }}</td>
+          <td>{{ doc.name }}</td>
+          <td>{{ doc.speciality }}</td>
           <td>{{ doc.location }}</td>
+          <td @click="deleteDoctor(doc.id)">🔥delete</td>
+          <td @click="editDoctor(doc)">✏️edit</td>
         </tr>
       </tbody>
     </table>
+    <div v-else>No doctors present in system</div>
     <br />
 
     <div>
-      <form class="row g-3 table-bordered border-dark">
-        <div class="col-md-6">
-          <label for="inputName" class="form-label">First Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            v-model="name"
-          />
+      <div class="row g-3 table-bordered border-dark">
+        <div class="col-md-12">
+          <label class="form-label"> Name</label>
+          <input type="text" class="form-control" v-model="name" />
         </div>
-        <div class="col-md-6">
-          <label for="inputLastname" class="form-label">Last Name </label>
+
+        <div class="col-12">
+          <label for="inputUsername" class="form-label">Location</label>
           <input
             type="text"
             class="form-control"
-            id="inputPassword4"
-            v-model="lastName"
+            id="inputUsername"
+            placeholder=" enter location"
+            v-model="location"
           />
         </div>
         <div class="col-12">
-          <label for="inputUsername" class="form-label">Username</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputAddress"
-            placeholder=" enter username"
-            v-model="Username"
-          />
-        </div>
-        <div class="col-12">
-          <label for="inputAddress2" class="form-label">Email</label>
+          <label for="inputAddress2" class="form-label">speciality</label>
           <input
             type="text"
             class="form-control"
             id="inputAddress2"
             placeholder="enter"
-            v-model="Email"
+            v-model="speciality"
           />
         </div>
         <div class="col-12">
-          <button @click="addDoctors" type="submit" class="btn btn-primary">
-            Add Doctor
+          <button @click="addDoctors" class="btn btn-primary">
+            {{ btnLabel }}
           </button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </template>
-    
-
 
 <style>
 .table {
@@ -85,22 +75,29 @@
   display: flexbox;
 }
 </style>
-  
+
 <script>
 import axios from "axios";
 
 export default {
+  // eslint-disable-next-line vue/multi-word-component-names
   name: "Home",
   props: {
     msg: String,
+  },
+  computed: {
+    btnLabel() {
+      return this.mode === "add" ? "Add Doctor" : "update";
+    },
   },
   data() {
     return {
       doctors: [],
       name: "",
-      lastName: "",
-      Username: "",
-      Email: "",
+      id: "",
+      location: "",
+      speciality: "",
+      mode: "add",
     };
   },
   async mounted() {
@@ -109,30 +106,66 @@ export default {
   },
   methods: {
     async getDoctors() {
-      let config = {
-        Headers: {
-          Accept: "application/json",
-        },
-      };
       const doctors = await axios.get(
-        "http://localhost:5000/onlinedoctor-beed3/us-central1/app",
-
-        config
+        "http://localhost:5000/onlinedoctor-beed3/us-central1/app"
       );
       this.doctors = doctors.data;
     },
     async addDoctors() {
-      const data = {
-        firstName: this.name,
-        lastName: this.lastName,
-        Username: this.Username,
-        Email: this.Email,
+      if (this.mode === "edit") {
+        this.updateDoctor();
+        return;
+      }
+      const payload = {
+        location: this.location,
+        speciality: this.speciality,
+        name: this.name,
       };
       const response = await axios.post(
         "http://localhost:5000/onlinedoctor-beed3/us-central1/app",
-        data
+        payload
       );
       console.log(response);
+      // After post,  get all doctors again.
+      //  This will remove deleted doctor entry from page.
+      this.getDoctors();
+      this.name = "";
+      this.speciality = "";
+      this.location = "";
+    },
+    async deleteDoctor(id) {
+      await axios.delete(
+        `http://localhost:5000/onlinedoctor-beed3/us-central1/app/${id}`
+      );
+      // After delete,  get all doctors again.
+      //  This will remove deleted doctor entry from page.
+      this.getDoctors();
+    },
+    editDoctor(doc) {
+      this.name = doc.name;
+      this.speciality = doc.speciality;
+      this.location = doc.location;
+      this.id = doc.id;
+      this.mode = "edit";
+    },
+    async updateDoctor() {
+      const payload = {
+        location: this.location,
+        speciality: this.speciality,
+        name: this.name,
+      };
+      const response = await axios.put(
+        "http://localhost:5000/onlinedoctor-beed3/us-central1/app/" + this.id,
+        payload
+      );
+      console.log(response);
+      // After post,  get all doctors again.
+      //  This will remove deleted doctor entry from page.
+      this.getDoctors();
+      this.name = "";
+      this.speciality = "";
+      this.location = "";
+      this.mode = "add";
     },
   },
 };

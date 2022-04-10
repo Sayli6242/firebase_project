@@ -1,26 +1,9 @@
-const admin = require('firebase-admin');
-// const { getFirestore } = require('firebase-admin/firestore');
-const functions = require('firebase-functions');
-const express = require('express');
-// const cors = require('cors');
+const admin = require("firebase-admin");
+const functions = require("firebase-functions");
+const express = require("express");
+const cors = require("cors")();
 const app = express();
-// Automatically allow cross-origin requests
-app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-
-    //intercepts OPTIONS method
-    if ('OPTIONS' === req.method) {
-        //respond with 200
-        res.send(200);
-    }
-    else {
-        //move on
-        next();
-    }
-});
-
+app.use(cors);
 
 const firebaseConfig = {
     apiKey: "AIzaSyBj_XYZQgKH-9YU6fdivTnNHQAySbDhkiw",
@@ -29,74 +12,65 @@ const firebaseConfig = {
     storageBucket: "onlinedoctor-beed3.appspot.com",
     messagingSenderId: "319467208568",
     appId: "1:319467208568:web:3c8b9dd8395a203edcd28d",
-    measurementId: "G-ZYYDE8XF2N"
+    measurementId: "G-ZYYDE8XF2N",
 };
 
-// const admin = firebase.initializeApp(firebaseConfig);
-// Add middleware to authenticate requests
-// app.use(myMiddleware);
 admin.initializeApp(firebaseConfig);
 
 const db = admin.firestore();
 
-// const doctors =
+app.delete("/:id", async (req, res) => {
+    // Before delete check if document is present in DB
+    const doctorsRef = db.collection("doctors").doc(req.params.id);
+    const doc = await doctorsRef.get();
+    if (!doc.exists) {
+        console.log("No such document!");
+        res.status(404);
+        res.send({ error: "No such document!" });
+    }
 
-//     [
-//         {
-//             "Name": "Dr.Mahajan",
-//             "city_state": "Motala",
-//             "Speciality": "General Physician",
-//             "Timing": "8am_to_8pm"
-//         },
-//         {
-//             "Name": "Dr.Batra",
-//             "city_state": "Buldhana",
-//             "Speciality": "Eye Specialist",
-//             "Timing": "8am_to_8pm"
-//         }
-//     ];
-
-app.delete('/:id', async (req, res) => {
-    // console.log(req.params);
-    const resp = await db.collection('doctors').doc(req.params.id).delete();
+    //   If present delete doc
+    const resp = await db.collection("doctors").doc(req.params.id).delete();
     console.log(resp);
-    res.send('delete function')
+    res.send({ message: "success" });
 });
-app.put('/:id', (req, res) => res.send('put something'));
-app.put('/:id', async (req, res) => {
-    // console.log(req.params);
-    const resp = await db.collection('doctors').doc(req.params.id).put();
+app.put("/:id", async (req, res) => {
+    // Update document using id from path parameter
+    const doctorsRef = db.collection("doctors").doc(req.params.id);
+    const resp = await doctorsRef.update(req.body);
     console.log(resp);
-    res.send('update something')
+    res.send({ message: "success" });
 });
-app.post('/', async (req, res) => {
-    // add data to data base
-    const docRef = db.collection('doctors').doc();
-
-    await docRef.set(req.body);
-
-    console.log(req.body);
-    res.send('post anything')
+app.post("/", async (req, res) => {
+    // Create new document in DB
+    const docRef = db.collection("doctors").doc();
+    const resp = await docRef.set(req.body);
+    console.log(resp);
+    res.send({ message: "success" });
 });
-// app.get('/', (req, res) => res.send(doctors));
-app.get('/:id', (req, res) => res.send('get method'));
-app.get('/', async (req, res) => {
-    const doctors = []
-    // doctors.push(doc)
-    // GET documents 
-    const snapshot = await db.collection('doctors').get();
+app.get("/:id", async (req, res) => {
+    // get data of one document
+    const doctorsRef = db.collection("doctors").doc(req.params.id);
+    const doc = await doctorsRef.get();
+    if (!doc.exists) {
+        console.log("No such document!");
+        res.status(404);
+        res.send({ error: "No such document!" });
+    } else {
+        console.log("Document data:", doc.data());
+        res.send(doc.data());
+    }
+});
+app.get("/", async (req, res) => {
+    // get data of all documents
+    const doctors = [];
+    const snapshot = await db.collection("doctors").get();
     snapshot.forEach((doc) => {
-        // console.log(doc.id, '=>', doc.data());
-        const temp = doc.data()
-        temp.id = doc.id
-        doctors.push(temp)
+        const temp = doc.data();
+        temp.id = doc.id;
+        doctors.push(temp);
     });
-    // REturn docs as response
-    res.send(doctors)
+    res.send(doctors);
 });
-
-
-// getDocuments()
 
 exports.app = functions.https.onRequest(app);
-
