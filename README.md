@@ -28,3 +28,21 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 vue create vue-proj
  # installing vue
  npm install -g @vue/cli
+
+
+# Firebase commands
+
+deploy all 
+```
+firebase deploy
+```
+
+deploy functions 
+```
+firebase deploy --only=functions
+```
+
+deploy hosting 
+```
+firebase deploy --only=hosting
+```

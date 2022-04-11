@@ -107,7 +107,7 @@ export default {
   methods: {
     async getDoctors() {
       const doctors = await axios.get(
-        "http://localhost:5000/onlinedoctor-beed3/us-central1/app"
+        "https://us-central1-onlinedoctor-beed3.cloudfunctions.net/app/doctor"
       );
       this.doctors = doctors.data;
     },
@@ -122,7 +122,7 @@ export default {
         name: this.name,
       };
       const response = await axios.post(
-        "http://localhost:5000/onlinedoctor-beed3/us-central1/app",
+        "https://us-central1-onlinedoctor-beed3.cloudfunctions.net/app/doctor",
         payload
       );
       console.log(response);
@@ -135,7 +135,7 @@ export default {
     },
     async deleteDoctor(id) {
       await axios.delete(
-        `http://localhost:5000/onlinedoctor-beed3/us-central1/app/${id}`
+        `https://us-central1-onlinedoctor-beed3.cloudfunctions.net/app/doctor/${id}`
       );
       // After delete,  get all doctors again.
       //  This will remove deleted doctor entry from page.
@@ -155,7 +155,7 @@ export default {
         name: this.name,
       };
       const response = await axios.put(
-        "http://localhost:5000/onlinedoctor-beed3/us-central1/app/" + this.id,
+        `https://us-central1-onlinedoctor-beed3.cloudfunctions.net/app/doctor/${this.id}`,
         payload
       );
       console.log(response);

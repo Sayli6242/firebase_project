@@ -5,18 +5,22 @@ import router from './router'
 import firebase from "firebase/compat/app";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/scss/bootstrap.scss'
-import { ButtonPlugin, ModalPlugin } from 'bootstrap-vue'
-
-import BootstrapVue from "bootstrap-vue";
-Vue.use(BootstrapVue);
+import { ButtonPlugin, ModalPlugin, CardPlugin } from 'bootstrap-vue'
 import VueSidebarMenu from 'vue-sidebar-menu'
-import { CardPlugin } from "bootstrap-vue";
+import { FormDatepickerPlugin } from 'bootstrap-vue'
+import { DropdownPlugin } from 'bootstrap-vue'
 
 
+
+
+Vue.use(DropdownPlugin)
 Vue.use(VueSidebarMenu)
 Vue.use(ButtonPlugin)
 Vue.use(CardPlugin);
+
 Vue.use(ModalPlugin)
+
+Vue.use(FormDatepickerPlugin)
 
 const firebaseConfig = {
   apiKey: "AIzaSyBj_XYZQgKH-9YU6fdivTnNHQAySbDhkiw",

@@ -19,7 +19,7 @@ admin.initializeApp(firebaseConfig);
 
 const db = admin.firestore();
 
-app.delete("/:id", async (req, res) => {
+app.delete("/doctor/:id", async (req, res) => {
     // Before delete check if document is present in DB
     const doctorsRef = db.collection("doctors").doc(req.params.id);
     const doc = await doctorsRef.get();
@@ -34,21 +34,21 @@ app.delete("/:id", async (req, res) => {
     console.log(resp);
     res.send({ message: "success" });
 });
-app.put("/:id", async (req, res) => {
+app.put("/doctor/:id", async (req, res) => {
     // Update document using id from path parameter
     const doctorsRef = db.collection("doctors").doc(req.params.id);
     const resp = await doctorsRef.update(req.body);
     console.log(resp);
     res.send({ message: "success" });
 });
-app.post("/", async (req, res) => {
+app.post("/doctor/", async (req, res) => {
     // Create new document in DB
     const docRef = db.collection("doctors").doc();
     const resp = await docRef.set(req.body);
     console.log(resp);
     res.send({ message: "success" });
 });
-app.get("/:id", async (req, res) => {
+app.get("/doctor/:id", async (req, res) => {
     // get data of one document
     const doctorsRef = db.collection("doctors").doc(req.params.id);
     const doc = await doctorsRef.get();
@@ -61,7 +61,7 @@ app.get("/:id", async (req, res) => {
         res.send(doc.data());
     }
 });
-app.get("/", async (req, res) => {
+app.get("/doctor/", async (req, res) => {
     // get data of all documents
     const doctors = [];
     const snapshot = await db.collection("doctors").get();

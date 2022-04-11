@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-success p-2 text-white">
+  <div class="bg-success p-2 text-white mx-auto">
     <input type="email" placeholder="Email" v-model="email" />
     <br />
     <input type="password" placeholder="Password" v-model="password" />

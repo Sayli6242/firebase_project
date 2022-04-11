@@ -32,6 +32,7 @@ export default {
         .then(
           (user) => {
             console.log(user.data);
+
             localStorage.setItem();
           },
           (err) => {
