@@ -47,6 +47,11 @@
               >Patients view</router-link
             >
           </li>
+          <li>
+            <router-link to="/List" class="nav-link text-white"
+              >View appointments</router-link
+            >
+          </li>
         </ul>
         <hr />
       </div>

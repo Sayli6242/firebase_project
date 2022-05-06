@@ -9,8 +9,9 @@ import { ButtonPlugin, ModalPlugin, CardPlugin } from 'bootstrap-vue'
 import VueSidebarMenu from 'vue-sidebar-menu'
 import { FormDatepickerPlugin } from 'bootstrap-vue'
 import { DropdownPlugin } from 'bootstrap-vue'
+import { BListGroup } from 'bootstrap-vue'
 
-
+Vue.component('b-list-group', BListGroup)
 
 
 Vue.use(DropdownPlugin)
