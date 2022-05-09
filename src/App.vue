@@ -52,6 +52,11 @@
               >View appointments</router-link
             >
           </li>
+          <li>
+            <router-link to="/ViewOfList" class="nav-link text-white"
+              >ViewOfList</router-link
+            >
+          </li>
         </ul>
         <hr />
       </div>
