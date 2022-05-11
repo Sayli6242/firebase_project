@@ -43,6 +43,11 @@
             >
           </li>
           <li>
+            <router-link to="/AddUser" class="nav-link text-white"
+              >Add_User</router-link
+            >
+          </li>
+          <li>
             <router-link to="/List" class="nav-link text-white"
               >Patients view</router-link
             >

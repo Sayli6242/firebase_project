@@ -1,47 +1,57 @@
 <template>
   <!-- to do appointment list  -->
-  <b-card-group deck>
-    <b-card header="Card with list group">
-      <b-list-group>
-        <b-list-group-item href="#">Cras justo odio</b-list-group-item>
-        <b-list-group-item href="#">Dapibus ac facilisis in</b-list-group-item>
-        <b-list-group-item href="#">Vestibulum at eros</b-list-group-item>
-      </b-list-group>
-
-      <p class="card-text mt-2">
-        Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla
-        tempor. Laborum consequat non elit enim exercitation cillum aliqua
-        consequat id aliqua. Esse ex consectetur mollit voluptate est in duis
-        laboris ad sit ipsum anim Lorem.
-      </p>
-    </b-card>
-
-    <b-card no-body header="Card with flush list group">
-      <b-list-group flush>
-        <b-list-group-item href="#">Cras justo odio</b-list-group-item>
-        <b-list-group-item href="#">Dapibus ac facilisis in</b-list-group-item>
-        <b-list-group-item href="#">Vestibulum at eros</b-list-group-item>
-      </b-list-group>
-
-      <b-card-body>
-        Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla
-        tempor. Laborum consequat non elit enim exercitation cillum aliqua
-        consequat id aliqua. Esse ex consectetur mollit voluptate est in duis
-        laboris ad sit ipsum anim Lorem.
-      </b-card-body>
-    </b-card>
-  </b-card-group>
+  <div class="tbl">
+    <b-table striped hover :items="items">
+      <button>Accept</button>
+    </b-table>
+  </div>
 </template>
 
 
 
 <style>
+.tbl {
+  width: 100%;
+}
 </style>
 
 
 <script>
+import { ButtonPlugin } from "bootstrap-vue";
 import Home from "./Home.vue";
 export default {
+  data() {
+    return {
+      items: [
+        {
+          patient_name: "John Doe ",
+          Appointment_date: " 02/05/2022",
+          Paid_Amount: "750",
+          Status: "",
+        },
+        {
+          patient_name: "colvin KLain ",
+          Appointment_date: " 02/05/2022",
+          Paid_Amount: "750",
+          Status: " ",
+        },
+        {
+          patient_name: "JUstin bieber ",
+          Appointment_date: " 02/05/2022",
+          Paid_Amount: "750",
+          Status: " ",
+        },
+        {
+          patient_name: "Selena gomez ",
+          Appointment_date: " 02/05/2022",
+          Paid_Amount: "750",
+          Status: " ",
+        },
+        {},
+      ],
+    };
+  },
+
   components: { Home },
 };
 </script>

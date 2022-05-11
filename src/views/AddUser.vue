@@ -1,7 +1,7 @@
 <template>
   <div>
     <table class="table table-bordered border-dark" v-if="doctors.length">
-      <thead>
+      <!-- <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">Name</th>
@@ -10,19 +10,19 @@
           <th scope="col"></th>
           <th scope="col"></th>
         </tr>
-      </thead>
-      <tbody>
+      </thead> -->
+      <!-- <tbody>
         <tr v-for="(doc, index) in doctors" :key="doc.id">
           <th scope="row">{{ index + 1 }}</th>
           <td>{{ doc.name }}</td>
           <td>{{ doc.speciality }}</td>
           <td>{{ doc.location }}</td>
-          <td @click="deleteDoctor(doc.id)">🔥delete</td>
-          <td @click="editDoctor(doc)">✏️edit</td>
+          <td @click="deleteDoctor(doc.id)">delete</td>
+          <td @click="editDoctor(doc)">edit</td>
         </tr>
-      </tbody>
+      </tbody> -->
     </table>
-    <div v-else>No doctors present in system</div>
+    <div v-else>No User present in system</div>
     <br />
 
     <div>
@@ -33,17 +33,17 @@
         </div>
 
         <div class="col-12">
-          <label for="inputUsername" class="form-label">Location</label>
+          <label for="inputUsername" class="form-label">Address</label>
           <input
             type="text"
             class="form-control"
             id="inputUsername"
-            placeholder=" enter location"
+            placeholder=" your address"
             v-model="location"
           />
         </div>
         <div class="col-12">
-          <label for="inputAddress2" class="form-label">speciality</label>
+          <label for="inputAddress2" class="form-label">Contact</label>
           <input
             type="text"
             class="form-control"
@@ -53,7 +53,7 @@
           />
         </div>
         <div class="col-12">
-          <button @click="addDoctors" class="btn btn-primary">
+          <button @click="add" class="btn btn-primary">
             {{ btnLabel }}
           </button>
         </div>
@@ -87,7 +87,7 @@ export default {
   },
   computed: {
     btnLabel() {
-      return this.mode === "add" ? "Add Doctor" : "update";
+      return this.mode === "add" ? "Add User" : "update";
     },
   },
   data() {

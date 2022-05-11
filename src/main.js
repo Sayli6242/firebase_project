@@ -10,6 +10,9 @@ import VueSidebarMenu from 'vue-sidebar-menu'
 import { FormDatepickerPlugin } from 'bootstrap-vue'
 import { DropdownPlugin } from 'bootstrap-vue'
 import { BListGroup } from 'bootstrap-vue'
+import { TablePlugin } from 'bootstrap-vue'
+
+Vue.use(TablePlugin)
 
 Vue.component('b-list-group', BListGroup)
 

@@ -21,7 +21,7 @@
       />
       <div class="valid-feedback">Looks good!</div>
     </div>
-    <div class="col-md-4">
+    <!-- <div class="col-md-4">
       <label for="validationCustomUsername" class="form-label">Username</label>
       <div class="input-group has-validation">
         <span class="input-group-text" id="inputGroupPrepend">@</span>
@@ -34,7 +34,7 @@
         />
         <div class="invalid-feedback">Please choose a username.</div>
       </div>
-    </div>
+    </div> -->
     <div class="col-md-6">
       <label for="validationCustom03" class="form-label">City</label>
       <input
@@ -49,36 +49,15 @@
       <label for="validationCustom04" class="form-label">State</label>
       <select class="form-select" id="validationCustom04" required>
         <option selected disabled value="">Choose...</option>
-        <option>...</option>
+        <option>Maharashtra</option>
+        <option>odisa</option>
+        <option>madhya pradesh</option>
+        <option>uttarakhand</option>
       </select>
       <div class="invalid-feedback">Please select a valid state.</div>
     </div>
-    <div class="col-md-3">
-      <label for="validationCustom05" class="form-label">Zip</label>
-      <input
-        type="text"
-        class="form-control"
-        id="validationCustom05"
-        required
-      />
-      <div class="invalid-feedback">Please provide a valid zip.</div>
-    </div>
-    <div class="col-md-3">
-      <label for="validationCustom04" class="form-label">State</label>
-      <select class="form-select" id="validationCustom04" required>
-        <option selected disabled value="">Choose...</option>
-        <option>...</option>
-      </select>
-      <div class="invalid-feedback">Please select a valid state.</div>
-    </div>
-    <div class="col-md-3">
-      <label for="validationCustom04" class="form-label">State</label>
-      <select class="form-select" id="validationCustom04" required>
-        <option selected disabled value="">Choose...</option>
-        <option>...</option>
-      </select>
-      <div class="invalid-feedback">Please select a valid state.</div>
-    </div>
+    -->
+
     <div class="col-12">
       <div class="form-check">
         <input

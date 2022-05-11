@@ -6,6 +6,7 @@ import Login from '../src/views/Login.vue'
 import Signup from '../src/views/Signup.vue'
 import List from '../src/views/List.vue'
 import ViewOfList from '../src/views/ViewOfList.vue'
+import AddUser from '../src/views/AddUser.vue'
 
 Vue.use(VueRouter)
 
@@ -44,6 +45,13 @@ const routes = [{ path: '/', redirect: { name: 'Home' } },
     path: '/ViewOfList',
     name: 'ViewOfList',
     component: ViewOfList
+
+},
+
+{
+    path: '/AddUser',
+    name: 'AddUser',
+    component: AddUser
 
 },
 {
