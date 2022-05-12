@@ -2,27 +2,13 @@
   <div class="d-flex flex-row">
     <div
       v-if="userName"
-      class="
-        d-flex
-        flex-column flex-shrink-0
-        p-3
-        text-white
-        bg-dark
-        full-h
-        justify-content-between
-      "
+      class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark full-h justify-content-between"
       style="width: 280px"
     >
       <div>
         <a
           href="/"
-          class="
-            d-flex
-            align-items-center
-            mb-3 mb-md-0
-            me-md-auto
-            text-white text-decoration-none
-          "
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
         >
           <svg class="bi me-2" width="40" height="32">
             <use xlink:href="#bootstrap" />
@@ -60,6 +46,11 @@
           <li>
             <router-link to="/ViewOfList" class="nav-link text-white"
               >ViewOfList</router-link
+            >
+          </li>
+          <li>
+            <router-link to="/join-appointment" class="nav-link text-white"
+              >Join Appointment</router-link
             >
           </li>
         </ul>
