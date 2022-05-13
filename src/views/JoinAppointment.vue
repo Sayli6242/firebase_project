@@ -1,32 +1,27 @@
 <template>
   <div>
-    <h2>1. Start your Webcam</h2>
+    <h2>Appointment</h2>
     <div class="videos">
       <span>
-        <h3>Local Stream</h3>
+        <h3>Local Video</h3>
         <video ref="webcamVideo" autoplay playsinline></video>
       </span>
       <span>
-        <h3>Remote Stream</h3>
+        <h3>Remote Video</h3>
         <video ref="remoteVideo" autoplay playsinline></video>
       </span>
     </div>
 
     <button ref="webcamButton" @click="webcamButtonClick">Start webcam</button>
-    <h2>2. Create a new Call</h2>
+
     <button ref="callButton" disabled @click="callButtonClick">
-      Create Call (offer)
+      Start Consultation
     </button>
 
-    <h2>3. Join a Call</h2>
-    <p>Answer the call from a different browser window or device</p>
-
-    <input ref="callInput" />
+    <!-- <input ref="callInput" /> -->
     <button ref="answerButton" disabled @click="answerClick">Answer</button>
 
-    <h2>4. Hangup</h2>
-
-    <button ref="hangupButton" disabled>Hangup</button>
+    <button ref="hangupButton" disabled @click="navigateHome">End Call</button>
   </div>
 </template>
 
@@ -83,12 +78,21 @@ export default {
       this.$refs.webcamButton.disabled = true;
     },
     async callButtonClick() {
+      const d = new Date();
+
+      const h =
+        d.getFullYear().toString() +
+        d.getMonth().toString() +
+        d.getDate().toString() +
+        d.getHours().toString() +
+        d.getMinutes().toString();
+
       // Reference Firestore collections for signaling
-      const callDoc = firebase.firestore().collection("calls").doc();
+      const callDoc = firebase.firestore().collection("calls").doc(h);
       const offerCandidates = callDoc.collection("offerCandidates");
       const answerCandidates = callDoc.collection("answerCandidates");
 
-      this.$refs.callInput.value = callDoc.id;
+      // this.$refs.callInput.value = callDoc.id;
 
       // Get candidates for caller, save to db
       pc.onicecandidate = (event) => {
@@ -128,8 +132,17 @@ export default {
       this.$refs.hangupButton.disabled = false;
     },
     async answerClick() {
-      const callId = this.$refs.callInput.value;
-      const callDoc = firebase.firestore().collection("calls").doc(callId);
+      // const callId = this.$refs.callInput.value;
+      const d = new Date();
+
+      const h =
+        d.getFullYear().toString() +
+        d.getMonth().toString() +
+        d.getDate().toString() +
+        d.getHours().toString() +
+        d.getMinutes().toString();
+
+      const callDoc = firebase.firestore().collection("calls").doc(h);
       const answerCandidates = callDoc.collection("answerCandidates");
       const offerCandidates = callDoc.collection("offerCandidates");
 
@@ -167,3 +180,29 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
+
+body {
+  font-family: "Syne Mono", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin: 80px 10px;
+}
+
+video {
+  width: 35vw;
+  height: 28vw;
+  margin: 1rem;
+  background: #2c3e50;
+}
+
+.videos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
