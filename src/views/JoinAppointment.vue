@@ -59,7 +59,7 @@ export default {
     async webcamButtonClick() {
       this.localStream = await navigator.mediaDevices.getUserMedia({
         video: true,
-        audio: true,
+        audio: false,
       });
       this.remoteStream = new MediaStream();
 
