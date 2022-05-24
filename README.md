@@ -42,7 +42,7 @@ deploy functions
 firebase deploy --only=functions
 ```
 
-deploy hosting 
+deploy hosting command
 ```
 firebase deploy --only=hosting
 ```
