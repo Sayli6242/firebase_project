@@ -48,6 +48,15 @@ app.post("/doctor/", async (req, res) => {
     console.log(resp);
     res.send({ message: "success" });
 });
+pp.post("/user/", async (req, res) => {
+    // Create new document in DB
+    const docRef = db.collection("users").doc();
+    const resp = await docRef.set(req.body);
+    console.log(resp);
+    res.send({ message: "success" });
+});
+
+
 app.get("/doctor/:id", async (req, res) => {
     // get data of one document
     const doctorsRef = db.collection("doctors").doc(req.params.id);
@@ -73,4 +82,7 @@ app.get("/doctor/", async (req, res) => {
     res.send(doctors);
 });
 
+
 exports.app = functions.https.onRequest(app);
+
+

@@ -6,7 +6,6 @@
         type="text"
         class="form-control"
         id="validationCustom01"
-        value="Mark"
         required
       />
       <div class="valid-feedback">Looks good!</div>

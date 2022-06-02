@@ -49,7 +49,7 @@
       <b-button class="d-block mx-50">
         <form @submit.prevent>
           <div class="form-group">
-            <label for="name">Full Name</label>
+            <label for="name">Dr.Khatri</label>
             <input class="form-control" id="text" name="name" type="name" />
           </div>
           <div class="form-group">
@@ -57,16 +57,16 @@
             <input class="form-control" id="number" name="number" type="text" />
           </div>
 
-          <div>
+          <!-- <div>
             <label for="example-datepicker">Choose a date</label>
             <b-form-datepicker
               id="example-datepicker"
               v-model="value"
               class="col-sm-right"
             ></b-form-datepicker>
-          </div>
-          <div>
-            <!-- <div>
+          </div> -->
+          <!-- <div> -->
+          <!-- <div>
               <b-dropdown id="dropdown-1" text="Select Time" class="m-md-2">
                 <b-dropdown-item>9:00 Am To 9.30 Pm</b-dropdown-item>
                 <b-dropdown-item>9:30 Am To 10.00 Pm</b-dropdown-item>
@@ -86,11 +86,11 @@
                 <b-dropdown-item>9:00 Am To 9.30 Pm</b-dropdown-item>
               </b-dropdown>
             </div> -->
-            <div class="col-md-10">
-              <label for="validationCustom04" class="form-label"
+
+          <!-- <label for="validationCustom04" class="form-label"
                 >Select Time</label
-              >
-              <select class="form-select" id="validationCustom04" required>
+              > -->
+          <!-- <select class="form-select" id="validationCustom04" required>
                 <option selected disabled value="">Select Time</option>
                 <option>9:00 Am To 9.30</option>
                 <option>9:30 Am To 10.00</option>
@@ -109,10 +109,8 @@
                 <option>4:30 Am To 5.00 Pm</option>
                 <option>5:00 Am To 5.30 Pm</option>
                 <option>9:00 Am To 9.30Pm</option>
-              </select>
-              <!-- <div class="invalid-feedback">Please select a valid state.</div> -->
-            </div>
-          </div>
+              </select> -->
+          <!-- <div class="invalid-feedback">Please select a valid state.</div> -->
         </form>
         <!-- <form class="row g-3 needs-validation" novalidate>
           <div class="col-md-4">
