@@ -66,6 +66,7 @@
 .table {
   margin-left: 0;
   margin-top: auto;
+  cursor: pointer;
 }
 
 .row {

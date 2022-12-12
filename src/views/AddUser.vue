@@ -1,7 +1,7 @@
 <template>
   <div>
-    <table class="table table-bordered border-dark" v-if="doctors.length">
-      <!-- <thead>
+    <table class="table table-bordered border-dark" v-if="users.length">
+      <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">Name</th>
@@ -10,17 +10,17 @@
           <th scope="col"></th>
           <th scope="col"></th>
         </tr>
-      </thead> -->
-      <!-- <tbody>
-        <tr v-for="(doc, index) in doctors" :key="doc.id">
+      </thead>
+      <tbody>
+        <tr v-for="(doc, index) in users" :key="doc.id">
           <th scope="row">{{ index + 1 }}</th>
           <td>{{ doc.name }}</td>
           <td>{{ doc.speciality }}</td>
           <td>{{ doc.location }}</td>
-          <td @click="deleteDoctor(doc.id)">delete</td>
-          <td @click="editDoctor(doc)">edit</td>
+          <td @click="deleteUser(doc.id)">delete</td>
+          <td @click="editUser(doc)">edit</td>
         </tr>
-      </tbody> -->
+      </tbody>
     </table>
     <div v-else>No User present in system</div>
     <br />
@@ -92,7 +92,7 @@ export default {
   },
   data() {
     return {
-      doctors: [],
+      users: [],
       name: "",
       id: "",
       location: "",
@@ -101,19 +101,19 @@ export default {
     };
   },
   async mounted() {
-    await this.getDoctors();
-    console.log(this.doctors);
+    await this.getUsers();
+    console.log(this.users);
   },
   methods: {
-    async getDoctors() {
-      const doctors = await axios.get(
-        "https://us-central1-onlinedoctor-beed3.cloudfunctions.net/app/doctor"
+    async getUsers() {
+      const users = await axios.get(
+        "https://us-central1-onlinedoctor-beed3.cloudfunctions.net/app/user"
       );
-      this.doctors = doctors.data;
+      this.users = users.data;
     },
-    async addDoctors() {
+    async addUsers() {
       if (this.mode === "edit") {
-        this.updateDoctor();
+        this.updateUsers();
         return;
       }
       const payload = {
@@ -122,46 +122,46 @@ export default {
         name: this.name,
       };
       const response = await axios.post(
-        "https://us-central1-onlinedoctor-beed3.cloudfunctions.net/app/doctor",
+        "https://us-central1-onlinedoctor-beed3.cloudfunctions.net/app/user",
         payload
       );
       console.log(response);
       // After post,  get all doctors again.
       //  This will remove deleted doctor entry from page.
-      this.getDoctors();
+      this.getUsers();
       this.name = "";
       this.speciality = "";
       this.location = "";
     },
-    async deleteDoctor(id) {
+    async deleteUsers(id) {
       await axios.delete(
-        `https://us-central1-onlinedoctor-beed3.cloudfunctions.net/app/doctor/${id}`
+        `https://us-central1-onlinedoctor-beed3.cloudfunctions.net/app/user/${id}`
       );
       // After delete,  get all doctors again.
       //  This will remove deleted doctor entry from page.
-      this.getDoctors();
+      this.getUsers();
     },
-    editDoctor(doc) {
+    editUsers(doc) {
       this.name = doc.name;
       this.speciality = doc.speciality;
       this.location = doc.location;
       this.id = doc.id;
       this.mode = "edit";
     },
-    async updateDoctor() {
+    async updateUsers() {
       const payload = {
         location: this.location,
         speciality: this.speciality,
         name: this.name,
       };
       const response = await axios.put(
-        `https://us-central1-onlinedoctor-beed3.cloudfunctions.net/app/doctor/${this.id}`,
+        `https://us-central1-onlinedoctor-beed3.cloudfunctions.net/app/user/${this.id}`,
         payload
       );
       console.log(response);
       // After post,  get all doctors again.
       //  This will remove deleted doctor entry from page.
-      this.getDoctors();
+      this.getUsers();
       this.name = "";
       this.speciality = "";
       this.location = "";

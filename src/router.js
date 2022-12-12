@@ -63,6 +63,11 @@ const routes = [
     component: List,
   },
   {
+    path: "/patientList",
+    name: "List",
+    component: List,
+  },
+  {
     path: "/login",
     name: "Login",
     component: Login,
